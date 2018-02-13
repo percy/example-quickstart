@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -e
+
+docker-compose up
+
+exit "$(
+docker-compose -f docker-compose.yml ps -q | \
+  tr -d '[:space:]' | \
+  xargs docker inspect -f '{{ .State.ExitCode }}'
+)"

@@ -1,0 +1,27 @@
+#!/bin/bash
+
+set -e
+set -x
+
+[ -z "$BUILDKITE_COMMIT" ] && echo "[ERROR] Need to set BUILDKITE_COMMIT environment variable." && exit 1
+
+IMAGE="gcr.io/percy-dev/github-enterprise-test"
+TAG="$BUILDKITE_COMMIT"
+
+BUILD_IMAGE="${BUILD_IMAGE:=false}"
+
+if [[ "$BUILD_IMAGE" != 'false' ]]
+then
+  echo "Building: $IMAGE:$TAG"
+
+  # Build and publish the API image.
+  docker build -t "$IMAGE:$TAG" .
+  gcloud docker -- push "$IMAGE:$TAG"
+  docker tag "$IMAGE:$TAG" "$IMAGE:latest"
+  gcloud docker -- push "$IMAGE:latest"
+
+  echo "Published image $IMAGE:$TAG"
+else
+  gcloud docker -- pull "$IMAGE:latest"
+  echo "Pulled image $IMAGE:latest"
+fi
