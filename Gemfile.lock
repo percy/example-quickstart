@@ -1,3 +1,22 @@
+GIT
+  remote: https://github.com/percy/percy-capybara.git
+  revision: ac3192852fbbede592f06fcd957b5e07c9354056
+  branch: map/update-to-token-only-build-endpoint
+  specs:
+    percy-capybara (3.1.2)
+      addressable (~> 2)
+      percy-client (~> 1.13)
+
+GIT
+  remote: https://github.com/percy/percy-client.git
+  revision: 6e14b7bbdb7b6c2081297823b3afeb48b642812e
+  branch: map/update-to-token-only-build-endpoint
+  specs:
+    percy-client (1.15.0)
+      addressable
+      excon
+      faraday (>= 0.9)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -10,9 +29,9 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    faraday (0.11.0)
+    excon (0.62.0)
+    faraday (0.15.2)
       multipart-post (>= 1.2, < 3)
-    httpclient (2.8.3)
     mime-types (3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
@@ -20,12 +39,6 @@ GEM
     multipart-post (2.0.0)
     nokogiri (1.7.0.1)
       mini_portile2 (~> 2.1.0)
-    percy-capybara (2.4.3)
-      percy-client (~> 1.9)
-    percy-client (1.9.2)
-      addressable
-      faraday (>= 0.9)
-      httpclient (>= 2.6)
     public_suffix (2.0.5)
     rack (2.0.1)
     rack-test (0.6.3)
@@ -38,8 +51,9 @@ PLATFORMS
 
 DEPENDENCIES
   capybara
-  percy-capybara
+  percy-capybara!
+  percy-client!
   rack
 
 BUNDLED WITH
-   1.14.4
+   1.16.2
