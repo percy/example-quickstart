@@ -3,7 +3,7 @@ require 'rack/file'
 require 'capybara'
 require 'percy/capybara'
 
-unless ENV['PERCY_PROJECT'] && ENV['PERCY_TOKEN']
+unless ENV['PERCY_TOKEN']
   puts
   puts \
     'Whoops! It looks like you need to setup the PERCY_PROJECT and PERCY_TOKEN ' \
@@ -42,4 +42,3 @@ puts '-->'
 puts
 puts 'Try editing /index.html and running this command again!'
 puts 'Percy will highlight any pixels changed.'
-
