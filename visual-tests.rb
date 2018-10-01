@@ -6,8 +6,8 @@ require 'percy/capybara'
 unless ENV['PERCY_TOKEN']
   puts
   puts \
-    'Whoops! It looks like you need to setup the PERCY_PROJECT and PERCY_TOKEN ' \
-    'environment variables.'
+    'Whoops! It looks like you need to setup the PERCY_TOKEN ' \
+    'environment variable.'
   exit -1
 end
 
