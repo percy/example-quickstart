@@ -1,23 +1,26 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    addressable (2.5.2)
+    addressable (2.6.0)
       public_suffix (>= 2.0.2, < 4.0)
-    capybara (3.8.1)
+    capybara (3.20.1)
       addressable
       mini_mime (>= 0.1.3)
       nokogiri (~> 1.8)
       rack (>= 1.6.0)
       rack-test (>= 0.6.3)
-      xpath (~> 3.1)
+      regexp_parser (~> 1.2)
+      uglifier
+      xpath (~> 3.2)
     excon (0.62.0)
+    execjs (2.7.0)
     faraday (0.15.3)
       multipart-post (>= 1.2, < 3)
     mini_mime (1.0.1)
-    mini_portile2 (2.3.0)
+    mini_portile2 (2.4.0)
     multipart-post (2.0.0)
-    nokogiri (1.8.4)
-      mini_portile2 (~> 2.3.0)
+    nokogiri (1.10.3)
+      mini_portile2 (~> 2.4.0)
     percy-capybara (3.2.0)
       addressable (~> 2)
       percy-client (~> 2.0)
@@ -29,7 +32,10 @@ GEM
     rack (2.0.5)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
-    xpath (3.1.0)
+    regexp_parser (1.5.0)
+    uglifier (4.1.20)
+      execjs (>= 0.3.0, < 3)
+    xpath (3.2.0)
       nokogiri (~> 1.8)
 
 PLATFORMS
