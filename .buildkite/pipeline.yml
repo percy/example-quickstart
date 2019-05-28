@@ -1,0 +1,11 @@
+---
+steps:
+  - command: bin/publish
+    label: ":rocket: :percy: Build image"
+    timeout_in_minutes: 5
+
+  - wait
+
+  - command: bin/test
+    label: ":rocket: :percy: Run Percy"
+    timeout_in_minutes: 2
